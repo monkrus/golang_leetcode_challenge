@@ -26,3 +26,20 @@ func removeDuplicates(nums []int) int {
 	return start
    
 }
+
+2. Best time to buy and sell stock II
+
+func maxProfit(prices []int) int {
+
+    profit := 0
+    
+    for i := 1; i < len(prices); i++ {
+        if prices[i] > prices[i-1] {
+            profit += prices[i] - prices[i-1]
+        }
+    }
+    
+	return profit
+
+}
+
