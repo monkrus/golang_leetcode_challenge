@@ -1,4 +1,6 @@
 1. Remove duplicates from Sorted array
+Given a sorted array nums, remove the duplicates in-place such that each element appear only once and return the new length.
+Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
 
 // we set a function that take nums array, returns int.
 // If the length of array is less than two, which means there are NO duplicates,
@@ -31,7 +33,12 @@ func removeDuplicates(nums []int) int {
    
 }
 
-2. Best time to buy and sell stock II
+2. Best time to buy and sell stock II.
+
+Say you have an array for which the ith element is the price of a given stock on day i.
+Design an algorithm to find the maximum profit.
+You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).
+Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).
 
 func maxProfit(prices []int) int {
    // initially the profit is zero
@@ -51,7 +58,9 @@ func maxProfit(prices []int) int {
 
 }
 
-3. Roate array
+3. Rotate array
+Given an array, rotate the array to the right by k steps, where k is non-negative.
+
 
 func rotate(nums []int, k int)  {
  if k == 0 || k == len(nums) {
