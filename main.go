@@ -95,8 +95,25 @@ func reverse(s []int) {
 
 4. Contains duplicate
 
-Given an array of integers, find if the array contains any duplicates.
+/*Given an array of integers, find if the array contains any duplicates.
 
 Your function should return true if any value appears at least twice in the array,
-and it should return false if every element is distinct.
+and it should return false if every element is distinct.*/
+
+// func takes an array nums, returns bool
+// record is a map with int key/ int value
+// for loop an array , the range 
+func containsDuplicate(nums []int) bool {
+	record := make(map[int]int)
+        for _, num := range nums {
+	if _, ok := record[num]; 
+	!ok {
+	record[num] = 1
+	} else {
+	return true
+	}
+	}
+	return false
+        }
+
 
