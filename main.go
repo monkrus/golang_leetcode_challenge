@@ -73,15 +73,15 @@ func rotate(nums []int, k int)  {
 	if k > len(nums) {
 		k %= len(nums)
 	}
-// we reverse the array nums, cutting the slice between 0th element and the length of the array `nums` minus k
-// then we reverse the just created slice
+// we apply reverse towards the slice between 0th element and the length of the array `nums` minus k
+// then apply it again towards the whole length minus k
+// and finally apply it towards the nums
 	reverse(nums[0 : len(nums)-k])
 	reverse(nums[len(nums)-k:])
 	reverse(nums)
 }
 
-//
-
+// 
 func reverse(s []int) {
 	if len(s) == 0 {
 		return
