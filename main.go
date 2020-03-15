@@ -61,6 +61,10 @@ func maxProfit(prices []int) int {
 3. Rotate array
 Given an array, rotate the array to the right by k steps, where k is non-negative.
 
+//  if k is 0, rotation does not make sense
+//  if k is equal to the length of array, it will return to the initial position
+//  if k is more than a length, k equals to k moduls of length (e.g. len is 5, k is 7, the modulus is 2)
+
 
 func rotate(nums []int, k int)  {
  if k == 0 || k == len(nums) {
@@ -69,10 +73,14 @@ func rotate(nums []int, k int)  {
 	if k > len(nums) {
 		k %= len(nums)
 	}
+// we reverse the array nums, cutting the slice between 0th element and the length of the array `nums` minus k
+// then we reverse the just created slice
 	reverse(nums[0 : len(nums)-k])
 	reverse(nums[len(nums)-k:])
 	reverse(nums)
 }
+
+//
 
 func reverse(s []int) {
 	if len(s) == 0 {
