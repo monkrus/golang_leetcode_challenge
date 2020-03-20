@@ -59,38 +59,29 @@ func maxProfit(prices []int) int {
 }
 
 3. Rotate array
+
 Given an array, rotate the array to the right by k steps, where k is non-negative.
-
-//  if k is 0, rotation does not make sense
-//  if k is equal to the length of array, it will return to the initial position
-//  if k is more than a length, k equals to k moduls of length (e.g. len is 5, k is 7, the modulus is 2)
-
-
 func rotate(nums []int, k int)  {
- if k == 0 || k == len(nums) {
+    n := len(nums)
+
+	if k > n {
+		k %= n
+	}
+	if k == 0 || k == n {
 		return
 	}
-	if k > len(nums) {
-		k %= len(nums)
-	}
-// we apply reverse towards the slice between 0th element and the length of the array `nums` minus k
-// then apply it again towards the whole length minus k
-// and finally apply it towards the nums
-	reverse(nums[0 : len(nums)-k])
-	reverse(nums[len(nums)-k:])
-	reverse(nums)
+
+	reverse(nums, 0, n-1)
+	reverse(nums, 0, k-1)
+	reverse(nums, k, n-1)
 }
 
-// 
-func reverse(s []int) {
-	if len(s) == 0 {
-		return
+func reverse(nums []int, i, j int) {
+	for i < j {
+		nums[i], nums[j] = nums[j], nums[i]
+		i++
+		j--
 	}
-	end := len(s) - 1
-	mid := len(s) / 2
-	for i := 0; i < mid; i++ {
-		s[i], s[end-i] = s[end-i], s[i]
-	}   
 }
 
 4. Contains duplicate
@@ -129,6 +120,13 @@ func containsDuplicate(nums []int) bool {
 		return res
 	}
 
-	* ^ A bitwise XOR takes two bit patterns of equal length and performs the logical exclusive OR operation on each pair of corresponding bits. 
+	/* ^ A bitwise XOR takes two bit patterns of equal length and performs the logical exclusive OR operation on each pair of corresponding bits. 
 	The result in each position is 1 if only the first bit is 1 or only the second bit is 1, but will be 0 if both are 0 or both are 1. 
-	In this we perform the comparison of two bits, being 1 if the two bits are different, and 0 if they are the same*/                                                                          
+	In this we perform the comparison of two bits, being 1 if the two bits are different, and 0 if they are the same  
+
+        1 -> 0/1 or 1/0
+        0 -> 1/1 or 0/1
+
+        if res = n, 0
+        if res !=n, 1
+        */
