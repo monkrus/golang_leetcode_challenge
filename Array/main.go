@@ -117,3 +117,18 @@ func containsDuplicate(nums []int) bool {
         }
 
 
+	5. Single numbers
+
+	func singleNumber(nums []int) int {
+		res := 0
+		for _, n := range nums {
+			// n^n == 0
+			// a^b^a^b^a == a
+			res ^= n
+		}
+		return res
+	}
+
+	* ^ A bitwise XOR takes two bit patterns of equal length and performs the logical exclusive OR operation on each pair of corresponding bits. 
+	The result in each position is 1 if only the first bit is 1 or only the second bit is 1, but will be 0 if both are 0 or both are 1. 
+	In this we perform the comparison of two bits, being 1 if the two bits are different, and 0 if they are the same*/                                                                          
