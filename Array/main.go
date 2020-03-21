@@ -10,18 +10,7 @@ func removeDuplicates(nums []int) int {
  if len(nums) < 2 {
 		return len(nums)
 	}
- 
- /*we set starting element (one item in array) and preVal (the value of the first element in array)
-   run the for loop from 1 to the whole length of the array
-   if the length of the nums is NOT equal to preVal (ex. there is more than one element in array)
- 
-    start gets +1 element ()
-    preval gets a value of the new element
-    and nums[start] becomes nums[i]
-    (ex. start=1,2 ; preval=nums [0 1])
-    nums[start] now equal to the nums[i]
-    meaning the length of array has been adjusted
-  */
+
  
 	start, preVal := 1, nums[0]
 	for i := 1; i < len(nums); i++ {
@@ -32,6 +21,13 @@ func removeDuplicates(nums []int) int {
 	return start
    
 }
+
+ /*
+ // start      =  1, 2, 3, 4, 5
+// preVal      = 2, 4, 6, 8, 10
+// nums[start] = 0, 1, 2, 3, 4
+ */
+
 
 2. Best time to buy and sell stock II.
 
