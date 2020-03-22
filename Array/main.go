@@ -23,9 +23,9 @@ func removeDuplicates(nums []int) int {
 }
 
  /*
- // start      =  1, 2, 3, 4, 5
-// preVal      = 2, 4, 6, 8, 10
-// nums[start] = 0, 1, 2, 3, 4
+ // start      =  1, 2, 3, 4, 5  --> sequence numbers
+// preVal      = 2, 4, 6, 8, 10  --> input numbers
+// nums[start] = 0, 1, 2, 3, 4   --> array indexes
  */
 
 
