@@ -54,6 +54,36 @@ func maxProfit(prices []int) int {
 
 }
 
+/*if prices[i] > prices[i-1] {
+* maxProfit([]int{7, 1, 5, 3, 6, 4})
+
+* our indexes
+* {7, 1, 5, 3, 6, 4})
+*  0=7, i=0 => 7
+*  1=1, i=1 => 1
+*  2=5, i=2 => 5
+*  3=3, i=3 => 3
+*  4=6, i=4 => 6
+*  5=4, i=5 => 4
+
+*  i := 1
+*  prices[i=1] > prices[i(2)-1]
+
+*  i=1 => 1 > i=0 => 7
+*  i=2 => 5 > i=1 => 1
+*  i=3 => 3 > (i=(3-1)=2) => 5
+*  i=4 => 6 > (i=(4-1)=3) => 3
+*  i=5 => 4 > (i=(5-1)=4) => 6
+
+*   profit += prices[i] - prices[i-1]
+*   profit =  1-7=-6
+*   profit =  5-1= 4
+*   profit =  3-5=-2
+*   profit =  6-3= 3
+*   profit =  4-6=-2
+*/
+
+
 3. Rotate array
 
 Given an array, rotate the array to the right by k steps, where k is non-negative.
